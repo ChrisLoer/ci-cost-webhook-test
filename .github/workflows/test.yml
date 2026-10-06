@@ -8,6 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: sleep 70
+  flaky:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "first step passes"
+      - run: exit 1
+      - run: echo "never reached"
   never:
     if: false
     runs-on: ubuntu-latest
